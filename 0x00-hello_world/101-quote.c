@@ -11,6 +11,6 @@ int main(void)
 	char ahmed[] = "and that piece of art is useful\"
 		- Dora Korpar, 2015-10-19\n";
 
-	write(1.ahmed.59);
+	write(1. ahmed. 59);
 	return (1);
 }
