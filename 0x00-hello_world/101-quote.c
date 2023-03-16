@@ -1,10 +1,11 @@
 #include <stdio.h>
+#include <stdlib.h>
 /**
  * main - Entry point
  *
  * Description: C program that prints useing putchar
  *
- * Return: Always 0 (success)
+ * Return: Always 1 (success)
 */
 int main(void)
 {
