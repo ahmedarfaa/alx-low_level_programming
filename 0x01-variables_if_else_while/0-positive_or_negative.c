@@ -1,6 +1,6 @@
 #include <stdio.h>
  /**
-  * main - Main Entry point
+  * main  Main Entry point
   *
   * Description: A C program useing if and else if
   *
@@ -15,14 +15,11 @@ int main(void)
 	{
 		printf("%d is positive\n", n);
 	}
-	else if (n == 0)
-	{	printf("%d is zero\n", n);
-	}
 	else if (n < 0)
 	{	printf("%d is negative\n", n);
 	}
 	else
-		printf("unknown");
+		printf("%d is zero\n", n);
 
 
 	return (0);
