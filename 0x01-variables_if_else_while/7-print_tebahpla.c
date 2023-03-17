@@ -6,9 +6,9 @@
  */
 int main(void)
 {
-	int num;
+	char num;
 
-	for (num = 57 ; num >= 48 ; num--)
+	for (num = 'z' ; num >= 'a' ; num--)
 		putchar(num);
 	putchar('\n');
 	return (0);
