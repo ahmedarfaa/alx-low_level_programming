@@ -1,13 +1,14 @@
 #include <stdio.h>
 
+void print_alphabet(void);
+
 /**
  * main - check the code
  *
- * print_alphabet - Proto
+ * Description: porto
  *
  * Return: Always 0.
  */
-void print_alphabet(void);
 int main(void)
 {
 	print_alphabet();
