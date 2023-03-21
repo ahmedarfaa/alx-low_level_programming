@@ -5,8 +5,6 @@ void print_alphabet(void);
 /**
  * main - check the code
  *
- * Description: porto
- *
  * Return: Always 0.
  */
 int main(void)
