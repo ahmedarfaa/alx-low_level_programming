@@ -1,19 +1,20 @@
 #include "main.h"
 
 /**
- * main - porto
- *
- * Description: Print_alphabet
- *
- * Return: Always 0.
+ * print_alphabet - Entry point
+ * Return:0
  */
+
 void print_alphabet(void)
 {
-	char alpha;
+	char c = 'a';
 
-	for (alpha = 'a'; alpha <= 'z'; alpha++)
-	{	putchar(alpha);
+	while (c <= 'z')
+	{
+		_putchar(c);
+		c++;
+
 	}
-	putchar('\n');
+	_putchar('\n');
 
 }
