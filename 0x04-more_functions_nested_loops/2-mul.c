@@ -15,5 +15,4 @@ int mul(int a, int b)
 	 return (sum);
 
 
-	return (0);
 }
