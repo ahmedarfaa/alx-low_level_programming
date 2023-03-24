@@ -14,7 +14,11 @@ int main(void)
 		i3 = i % 3;
 		i5 = i % 5;
 
-		if (i3 == 0)
+		if ((i3 == 0) && (i5 == 0))
+		{	printf("FizzBuzz");
+			printf(" ");
+		}
+		else if (i3 == 0)
 		{	printf("Fizz");
 			printf(" ");
 		}
