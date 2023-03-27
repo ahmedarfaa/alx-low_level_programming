@@ -7,8 +7,8 @@
 
 void puts_half(char *str)
 {
-		long int x = 0;
-		long int y;
+		 int x = 0;
+		 int y;
 
 		while (str[x] != '\0')
 		{
@@ -18,7 +18,7 @@ void puts_half(char *str)
 		if (x % 2 == 1)
 		{
 			y = (x - 1) / 2;
-			y += 2;
+			y++;
 		}
 		else
 		{	y = x / 2;
