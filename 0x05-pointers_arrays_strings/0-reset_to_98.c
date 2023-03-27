@@ -2,7 +2,7 @@
 
 /**
  * reset_to_98 - E
- * @*n: Pointer
+ * @n: Pointer
  * Return: 0.
  */
 
