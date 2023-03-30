@@ -1,18 +1,27 @@
 #include "main.h"
-/**
-* string_toupper - changes all lowercase letters of a string to uppercase
-* @n: input string
-* Return: a pointer to the changed string.
-*/
-char *string_toupper(char *n)
-{
-	int i;
 
-	for (i = 0; n[i] != '\0'; i++)
+/**
+ * leet - Entry point
+ * ONE if, TWO loops only
+ * @n: input The string to be encoded
+ * Return: Always 0
+ */
+char *leet(char *n)
+{
+	int i1 = 0, i2;
+	char leet[8] = {'O', 'L', '?', 'E', 'A', '?', '?', 'T'};
+
+	while (n[i1])
 	{
-		if (n[i] >= 'a' && n[i] <= 'z')
-			n[i] = n[i] - 32;
+		for (i2 = 0; i2 <= 7; i2++)
+		{
+			if (n[i1] == leet[i2] ||
+			    n[i1] - 32 == leet[i2])
+				n[i1] = i2 + '0';
+		}
+
+		i1++;
 	}
+
 	return (n);
 }
-
