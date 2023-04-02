@@ -2,50 +2,52 @@
 #include <stdio.h>
 
 /**
- * print_buffer - prints buffer
- * @b: buffer
- * @size: size
- * Return: void
+ * infinite_add - E
+ * @n1: b
+ * @n2: b
+ * @r: s
+ * @size_r: size
+ * Return: r
  */
 
-void print_buffer(char *b, int size)
+char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int o, j, i;
+	int i = 0, j = 0, l = 0, k, a, b, o = 0;
 
-	o = 0;
+	while (n1[i] != '0')
+		i++;
+	while (n2[j] != '0')
+		j++;
+	if (i > j)
+		l = i;
+	else
+		l = j;
+	if (l + 1 > size_r)
+		return (0);
 
-	if (size <= 0)
+	r[l] = '\0';
+	for (k = l - 1; k >= 0; k--)
 	{
-		printf("\n");
-		return;
+		i--;
+		j--;
+		if (i >= 0)
+			a = n1[i] - '0';
+		else
+			a = 0;
+		if (j >= 0)
+			b = n2[j] - '0';
+		else
+			b = 0;
+	r[k] = (a + b + o) % 10 + '0';
+	o = (a + b + o) / 10;
 	}
-	while (o < size)
-	{
-		j = size - o < 10 ? size - o : 10;
-		printf("%08x: ", o);
-		for (i = 0; i < 10; i++)
-		{
-			if (i < j)
-				printf("%02x", *(b + o + i));
-			else
-				printf("  ");
-			if (i % 2)
-			{
-				printf(" ");
-			}
-		}
-		for (i = 0; i < j; i++)
-		{
-			int c = *(b + o + i);
-
-			if (c < 32 || c > 132)
-			{
-				c = '.';
-			}
-			printf("%c", c);
-		}
-		printf("\n");
-		o += 10;
+	if (o == 1)
+	{	r[l + 1] = '\0';
+		if ((l + 2) > size_r)
+			return (0);
+		while (l-- >= 0)
+		r[l + 1] = r[l];
+		r[0] = o + '0';
 	}
+	return (r);
 }
-
