@@ -10,4 +10,6 @@ int is_palindrome(char *s);
 int wildcmp(char *s1, char *s2);
 int _ahmed(int n, int x);
 int prime(int n, int x);
+int comp(char *s, int x, int y);
+int len(char *s);
 
