@@ -1,10 +1,15 @@
 #include <stdio.h>
 
-/***/
-int main(int argc, char *argv[]);
+/**
+ * main - E
+ * @argc: v
+ * @argv: v
+ * Return: 0.
+ */
+int main(int argc, char *argv[])
 {
 	(void) argv;
-	printf("%d", argc - 1);
+	printf("%d\n", argc - 1);
 	return (0);
 
 }
