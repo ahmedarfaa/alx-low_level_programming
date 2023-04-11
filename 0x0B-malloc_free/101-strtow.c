@@ -67,7 +67,7 @@ char **strtow(char *str)
 				return (NULL);
 			}
 			for (l = 0; l < y; l++)
-				s[wc][l] = str[x + 1];
+				s[wc][l] = str[x + l];
 			s[wc][l] = '\0';
 			wc++;
 			x += y;
