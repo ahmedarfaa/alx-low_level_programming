@@ -9,13 +9,13 @@
 
 char *_strdup(char *str)
 {
-	int i, j;
+	int i = 0, j = 0;
 	char *ptr;
 
 	if (str == 0)
 		return (NULL);
 
-	for (i = 0; str[i] != '\0'; i++)
+	for (; str[i] != '\0'; i++)
 		ptr = malloc(i * sizeof(*str) + 1);
 
 	if (ptr == 0)
@@ -24,7 +24,7 @@ char *_strdup(char *str)
 	}
 	else
 	{
-		for (j = 0; j < i; j++)
+		for (; j < i; j++)
 			ptr[j] = str[j];
 	}
 	return (ptr);
