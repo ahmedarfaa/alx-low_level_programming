@@ -1,68 +1,103 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <stdlib.h>
-/***/
+#include <string.h>
+
+/**
+ * print_error - E
+ * Return:..
+ */
+
+void print_error(void)
+{
+	printf("Error\n");
+	exit(98);
+}
+/**
+ * is_valid_number - E
+ * @str: ..
+ * Return: 1.
+ */
+
+int is_valid_number(char *str)
+{
+	int i;
+
+	for (i = 0; str[i] != '\0'; i++)
+	{
+	if (!isdigit(str[i]))
+	{
+		return (0);
+	}
+	}
+	return (1);
+}
+/**
+ * main - E
+ * @argc: ..
+ * @argv: ..
+ * Return: 0.
+ */
 int main(int argc, char **argv)
 {
-	int x, y, l1, l2, l3, save;
-	char *num1, *num2, *mul;
+	int i, j, k, carry, len1, len2, len3;
+	char *num1, *num2, *result;
 
 	if (argc != 3)
-	{	printf("Error\n");
-		return (98);
+	{
+	print_error();
 	}
+
 	num1 = argv[1];
 	num2 = argv[2];
-	for (x = 0; num1[x] != '\0'; x++)
+
+	if (!is_valid_number(num1) || !is_valid_number(num2))
 	{
-		if (!isdigit(num1[x]))
-		{	printf("Error\n");
-			return (98);
-		}
+		print_error();
 	}
-	for (y = 0; num2[y] != '\0'; y++)
+
+		len1 = strlen(num1);
+		len2 = strlen(num2);
+		len3 = len1 + len2;
+		result = calloc(len3 + 1, sizeof(char));
+
+	if (result == NULL)
 	{
-		if (!isdigit(num2[y]))
-		{
-			printf("Error\n");
-			return (98);
-		}
+		print_error();
 	}
-	l1 = x;
-	l1 = y;
-	l3 = x + y;
-	mul = calloc(l1 + 1, sizeof(char))
-	if (mul == NULL)
+
+	for (i = len1 - 1; i >= 0; i--)
 	{
-		printf("Error\n");
-		return (98);
-	}
-	for (x = l1 - 1; x >= 0; x--)
+		carry = 0;
+	for (j = len2 - 1, k = i + j + 1; j >= 0; j--, k--)
 	{
-		save = 0;
-		for (y = 0; y >= 0; y--)
-		{
-			save += (num1[x] - '0') * (num2[y] - '0') + mul[x + y + 1]
-			mul[x + y + 1] = save % 10;
-			save /= 10;
-		}
-		mul[x + y + 1] += save;
+		carry += (num1[i] - '0') * (num2[j] - '0') + result[k];
+		result[k] = carry % 10;
+		carry /= 10;
 	}
-	x = 0;
-	while (x < l3 && mul[x] == 0)
+		result[k] += carry;
+	}
+
+	i = 0;
+	while (i < len3 && result[i] == 0)
 	{
-		x++;
+		i++;
 	}
-	if (x == l3)
+
+	if (i == len3)
+	{
 		printf("0\n");
+	}
 	else
 	{
-		for (; x < l3; x++)
-		{
-			printf("%d", mul[x]);
-		}
-		printf("\n");
+	for (; i < len3; i++)
+	{
+	printf("%d", result[i]);
 	}
-	free(mul);
+	printf("\n");
+	}
+
+	free(result);
+
 	return (0);
 }
