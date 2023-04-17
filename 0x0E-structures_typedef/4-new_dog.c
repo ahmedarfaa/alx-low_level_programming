@@ -23,7 +23,7 @@ int len(const char *s)
  * Return: d.
  */
 
-char copy(char *d, char *s)
+char *copy(char *d, char *s)
 {
 	int i;
 
@@ -48,7 +48,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	if (!name || age < 0 || !owner)
 		return (NULL);
-	dog = (dot_t *) malloc(sizeof(dog_t));
+	dog = (dog_t *) malloc(sizeof(dog_t));
 
 	if (dog == NULL)
 		return (NULL);
@@ -69,7 +69,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 	dog->name = copy(dog->name, name);
 	dog->age = age;
-	dog->owner = len(dog->owner, owner);
+	dog->owner = copy(dog->owner, owner);
 
 	return (dog);
 
