@@ -21,6 +21,8 @@ typedef struct list_s
 	struct list_s *next;
 } list_t;
 
+
+void _constructor(void) __attribute__ ((constructor));
 int _len(char *s);
 void free_list(list_t *head);
 size_t print_list(const list_t *h);
