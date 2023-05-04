@@ -12,11 +12,11 @@ void print_binary(unsigned long int n)
 
 	for (x = 63; x >= 0; x--)
 	{
-		count = n >> i;
+		count = n >> x;
 
-		if (count & i)
+		if (count & x)
 		{
-			_putchar('1);
+			_putchar('1');
 			count++;
 		}
 		else if (count)
