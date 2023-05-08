@@ -85,5 +85,6 @@ int main(int argc, char **argv)
 
 	free(buf);
 	close_fi(from);
+	close_fi(to);
 	return (0);
 }
